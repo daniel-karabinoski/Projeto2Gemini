@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segurança Digital para a Melhor Idade</title>
+    <style>
+        /* --- CONFIGURAÇÕES GERAIS DE ACESSIBILIDADE --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 22px; /* Fonte ampliada para facilidade de leitura */
+            line-height: 1.6;
+            background-color: #F8F9FA;
+            color: #111111; /* Alto contraste com o fundo */
+            padding-bottom: 40px;
+        }
+
+        /* --- CABEÇALHO --- */
+        header {
+            background-color: #003366; /* Azul escuro de alto contraste */
+            color: #FFFFFF;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 6px solid #FFCC00; /* Amarelo para destaque visual */
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.3rem;
+        }
+
+        /* --- CONTEÚDO PRINCIPAL --- */
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .boas-vindas {
+            background-color: #FFFFFF;
+            border: 3px solid #003366;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .boas-vindas h2 {
+            font-size: 1.8rem;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        /* --- CARTÕES DE DICAS --- */
+        .secao-dicas {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .card-dica {
+            background-color: #FFFFFF;
+            border: 3px solid #003366;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-dica h3 {
+            font-size: 1.7rem;
+            color: #003366;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .icon {
+            font-size: 2rem;
+        }
+
+        .card-dica p {
+            font-size: 1.25rem;
+            color: #222222;
+        }
+
+        .destaque {
+            background-color: #FFF3CD;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* --- BLANCO DE ALERTA E AJUDA --- */
+        .card-ajuda {
+            background-color: #FFF3CD;
+            border: 4px solid #856404;
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        .card-ajuda h3 {
+            font-size: 1.7rem;
+            color: #533F03;
+            margin-bottom: 10px;
+        }
+
+        .card-ajuda p {
+            font-size: 1.25rem;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        /* BOTÃO GRANDE FACILMENTE CLICÁVEL */
+        .botao-ajuda {
+            display: inline-block;
+            background-color: #003366;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: bold;
+            padding: 18px 36px;
+            border-radius: 12px;
+            border: 3px solid #000000;
+        }
+
+        .botao-ajuda:hover, .botao-ajuda:focus {
+            background-color: #FFCC00;
+            color: #000000;
+            outline: 4px solid #000000;
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.1rem;
+            color: #444444;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Internet Segura</h1>
+        <p>Dicas simples para navegar sem riscos</p>
+    </header>
+
+    <main>
+        <section class="boas-vindas">
+            <h2>Olá! Seja bem-vindo(a).</h2>
+            <p>Usar a internet ajuda a conversar com a família e ver novidades. Veja abaixo como se proteger de golpes no dia a dia.</p>
+        </section>
+
+        <section class="secao-dicas">
+
+            <article class="card-dica">
+                <h3><span class="icon">🔑</span> 1. Cuidado com Senhas</h3>
+                <p>Não use datas de aniversário. Escreva suas senhas em um <span class="destaque">caderno em casa</span>, longe do seu celular.</p>
+            </article>
+
+            <article class="card-dica">
+                <h3><span class="icon">📩</span> 2. Mensagens Estranhas</h3>
+                <p>Se receber mensagem no WhatsApp de alguém pedindo dinheiro urgente ou oferecendo prêmios, <span class="destaque">não responda</span> e fale com um familiar.</p>
+            </article>
+
+            <article class="card-dica">
+                <h3><span class="icon">🏦</span> 3. Ligação do Banco</h3>
+                <p>O seu banco <strong>nunca</strong> vai ligar pedindo sua senha ou pedindo para transferir dinheiro pelo celular.</p>
+            </article>
+
+            <article class="card-dica">
+                <h3><span class="icon">🛒</span> 4. Compras na Internet</h3>
+                <p>Só compre em sites conhecidos. Na dúvida, peça ajuda para alguém de confiança antes de digitar seus dados do cartão.</p>
+            </article>
+
+        </section>
+
+        <section class="card-ajuda">
+            <h3>Está na dúvida sobre algo?</h3>
+            <p>Se algo parecer estranho ou você achar que sofreu um golpe, pare o que está fazendo e peça ajuda.</p>
+            <a href="tel:190" class="botao-ajuda">Pedir Ajuda</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Guia de Segurança Digital • Feito para facilitar o seu dia a dia.</p>
+    </footer>
+
+</body>
+</html>
