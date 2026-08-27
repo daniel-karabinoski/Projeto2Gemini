@@ -1,30 +1,49 @@
-// CONTROLE DO TAMANHO DA FONTE
+// ===================================================
+// 1. GERENCIAMENTO DO TAMANHO DA FONTE
+// ===================================================
 let tamanhoAtual = 20;
 
 function alterarFonte(delta) {
   tamanhoAtual += delta;
 
-  // Garante limites mínimo e máximo para não quebrar a tela
-  if (tamanhoAtual < 18) tamanhoAtual = 18;
+  // Define limites para a fonte (entre 16px e 38px)
+  if (tamanhoAtual < 16) tamanhoAtual = 16;
   if (tamanhoAtual > 38) tamanhoAtual = 38;
 
   document.documentElement.style.setProperty('--tamanho-fonte', tamanhoAtual + 'px');
 }
 
-// SÍNTESE DE VOZ DA WEB
+// ===================================================
+// 2. GERENCIAMENTO DE TEMAS (CLARO, ESCURO, ALTO CONTRASTE)
+// ===================================================
+function aplicarTema(nomeTema) {
+  // Remove classes anteriores
+  document.body.classList.remove('tema-escuro', 'tema-contraste');
+
+  if (nomeTema === 'escuro') {
+    document.body.classList.add('tema-escuro');
+  } else if (nomeTema === 'contraste') {
+    document.body.classList.add('tema-contraste');
+  }
+  // Se for 'claro', não precisa adicionar classe
+}
+
+// ===================================================
+// 3. SÍNTESE DE VOZ (LEITURA EM VOZ ALTA)
+// ===================================================
 function lerTexto(texto) {
   if ('speechSynthesis' in window) {
-    // Parar qualquer leitura anterior
+    // Cancela leituras anteriores em andamento
     window.speechSynthesis.cancel();
 
     const fala = new SpeechSynthesisUtterance(texto);
     fala.lang = 'pt-BR';
-    fala.rate = 0.8; // Velocidade ajustada para 80% para fala mais clara
-    fala.pitch = 1;  // Tom de voz padrão
+    fala.rate = 0.8; // Velocidade reduzida para 80% para maior clareza
+    fala.pitch = 1;
 
     window.speechSynthesis.speak(fala);
   } else {
-    alert("Seu navegador não tem suporte para leitura por voz.");
+    alert("Seu navegador não suporta a leitura em voz alta.");
   }
 }
 
@@ -34,16 +53,23 @@ function pararVoz() {
   }
 }
 
-// CONFIGURAÇÃO DOS EVENTOS QUANDO A PÁGINA CARREGAR
+// ===================================================
+// 4. VINCULAÇÃO DOS EVENTOS (INICIALIZAÇÃO)
+// ===================================================
 document.addEventListener('DOMContentLoaded', () => {
-  // Eventos de fonte
+  // Eventos de alteração de fonte
   document.getElementById('btn-aumentar').addEventListener('click', () => alterarFonte(2));
   document.getElementById('btn-diminuir').addEventListener('click', () => alterarFonte(-2));
 
-  // Evento de interromper leitura
+  // Eventos de alteração de tema
+  document.getElementById('btn-tema-claro').addEventListener('click', () => aplicarTema('claro'));
+  document.getElementById('btn-tema-escuro').addEventListener('click', () => aplicarTema('escuro'));
+  document.getElementById('btn-tema-contraste').addEventListener('click', () => aplicarTema('contraste'));
+
+  // Evento para parar a leitura de voz
   document.getElementById('btn-parar-voz').addEventListener('click', pararVoz);
 
-  // Eventos para leitura individual das dicas
+  // Eventos para ler cada card de dica individualmente
   const botoesOuvir = document.querySelectorAll('.btn-ouvir');
   botoesOuvir.forEach(botao => {
     botao.addEventListener('click', () => {
