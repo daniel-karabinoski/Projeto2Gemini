@@ -18,6 +18,9 @@
   --cor-barra-borda: #CED4DA;
   --cor-botao-texto: #FFFFFF;
   --cor-foco: #FFD700;
+  --cor-tabela-linha: #F8F9FA;
+  --cor-destaque-cabecalho-fundo: #003366;
+  --cor-destaque-cabecalho-texto: #FFFFFF;
 }
 
 /* ===================================================
@@ -26,8 +29,8 @@
 body.tema-escuro {
   --cor-fundo: #121212;
   --cor-texto: #E0E0E0;
-  --cor-primaria: #375A7F;
-  --cor-primaria-hover: #2B4764;
+  --cor-primaria: #4C7DAE;
+  --cor-primaria-hover: #375A7F;
   --cor-card-fundo: #1E1E1E;
   --cor-card-borda: #333333;
   --cor-card-cabecalho: #2A2A2A;
@@ -39,15 +42,18 @@ body.tema-escuro {
   --cor-barra-borda: #444444;
   --cor-botao-texto: #FFFFFF;
   --cor-foco: #00E5FF;
+  --cor-tabela-linha: #282828;
+  --cor-destaque-cabecalho-fundo: #1B2A38;
+  --cor-destaque-cabecalho-texto: #FFFFFF;
 }
 
 /* ===================================================
-   3. TEMA ALTO CONTRASTE (FUNDO PRETO, TEXTO AMARELO/BRANCO)
+   3. TEMA ALTO CONTRASTE
    =================================================== */
 body.tema-contraste {
   --cor-fundo: #000000;
   --cor-texto: #FFFFFF;
-  --cor-primaria: #FFFF00; /* Botões Amarelos */
+  --cor-primaria: #FFFF00;
   --cor-primaria-hover: #CCCC00;
   --cor-card-fundo: #000000;
   --cor-card-borda: #FFFFFF;
@@ -58,11 +64,13 @@ body.tema-contraste {
   --cor-destaque-pare: #FF0000;
   --cor-barra-fundo: #000000;
   --cor-barra-borda: #FFFFFF;
-  --cor-botao-texto: #000000; /* Texto preto nos botões amarelos */
+  --cor-botao-texto: #000000;
   --cor-foco: #00FF00;
+  --cor-tabela-linha: #111111;
+  --cor-destaque-cabecalho-fundo: #000000;
+  --cor-destaque-cabecalho-texto: #FFFF00;
 }
 
-/* Estilo do texto dentro do botão Parar Voz no tema Alto Contraste */
 body.tema-contraste .btn-parar {
   color: #FFFFFF;
 }
@@ -82,7 +90,7 @@ body {
   line-height: 1.7;
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
-  padding-top: 140px; /* Espaço para a barra fixa superior */
+  padding-top: 140px;
   padding-bottom: 40px;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -146,22 +154,31 @@ button:focus {
   color: #FFFFFF;
 }
 
-/* CABEÇALHO DA PÁGINA */
+/* ENUNCIADO DESTAQUE DO CABEÇALHO */
 .cabecalho-principal {
-  text-align: center;
   max-width: 900px;
-  margin: 20px auto 30px auto;
+  margin: 10px auto 30px auto;
   padding: 0 20px;
 }
 
-.cabecalho-principal h1 {
-  font-size: 2.2rem;
-  color: var(--cor-primaria);
-  margin-bottom: 12px;
+.destaque-cabecalho {
+  background-color: var(--cor-destaque-cabecalho-fundo);
+  color: var(--cor-destaque-cabecalho-texto);
+  padding: 30px 20px;
+  border-radius: 16px;
+  text-align: center;
+  border: 4px solid var(--cor-card-borda);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-body.tema-contraste .cabecalho-principal h1 {
-  color: #FFFF00;
+.destaque-cabecalho h1 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.subtitulo-destaque {
+  font-size: 1.2rem;
+  opacity: 0.95;
 }
 
 /* CONTAINER DOS CARDS */
@@ -205,6 +222,50 @@ body.tema-contraste .card-cabecalho h2 {
   gap: 16px;
 }
 
+/* TABELA DE TELEFONES */
+.tabela-telefones {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.tabela-telefones th, 
+.tabela-telefones td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 2px solid var(--cor-card-borda);
+}
+
+.tabela-telefones th {
+  background-color: var(--cor-card-cabecalho);
+  color: var(--cor-primaria);
+  font-size: 1.1rem;
+}
+
+body.tema-contraste .tabela-telefones th {
+  color: #FFFF00;
+}
+
+.tabela-telefones tr:nth-child(even) {
+  background-color: var(--cor-tabela-linha);
+}
+
+.numero-destaque {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--cor-destaque-pare);
+  background-color: rgba(204, 0, 0, 0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+body.tema-contraste .numero-destaque {
+  color: #FFFF00;
+  background-color: transparent;
+}
+
 /* CAIXA DE ALERTA EM DESTAQUE */
 .caixa-alerta {
   background-color: var(--cor-alerta-fundo);
@@ -244,5 +305,10 @@ body.tema-contraste .card-cabecalho h2 {
 
   .barra-acessibilidade {
     justify-content: center;
+  }
+
+  .tabela-telefones th, 
+  .tabela-telefones td {
+    padding: 8px;
   }
 }

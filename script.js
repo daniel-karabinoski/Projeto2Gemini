@@ -17,7 +17,6 @@ function alterarFonte(delta) {
 // 2. GERENCIAMENTO DE TEMAS (CLARO, ESCURO, ALTO CONTRASTE)
 // ===================================================
 function aplicarTema(nomeTema) {
-  // Remove classes anteriores
   document.body.classList.remove('tema-escuro', 'tema-contraste');
 
   if (nomeTema === 'escuro') {
@@ -25,7 +24,6 @@ function aplicarTema(nomeTema) {
   } else if (nomeTema === 'contraste') {
     document.body.classList.add('tema-contraste');
   }
-  // Se for 'claro', não precisa adicionar classe
 }
 
 // ===================================================
@@ -33,12 +31,11 @@ function aplicarTema(nomeTema) {
 // ===================================================
 function lerTexto(texto) {
   if ('speechSynthesis' in window) {
-    // Cancela leituras anteriores em andamento
     window.speechSynthesis.cancel();
 
     const fala = new SpeechSynthesisUtterance(texto);
     fala.lang = 'pt-BR';
-    fala.rate = 0.8; // Velocidade reduzida para 80% para maior clareza
+    fala.rate = 0.8;
     fala.pitch = 1;
 
     window.speechSynthesis.speak(fala);
