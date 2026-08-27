@@ -1,50 +1,49 @@
-// 1. GERENCIAMENTO DO TAMANHO DA FONTE
+// CONTROLE DO TAMANHO DA FONTE
 let tamanhoAtual = 20;
 
-function alterarFonte(valor) {
-  tamanhoAtual += valor;
-  
-  // Limites para manter a legibilidade
-  if (tamanhoAtual < 16) tamanhoAtual = 16;
-  if (tamanhoAtual > 36) tamanhoAtual = 36;
+function alterarFonte(delta) {
+  tamanhoAtual += delta;
+
+  // Garante limites mínimo e máximo para não quebrar a tela
+  if (tamanhoAtual < 18) tamanhoAtual = 18;
+  if (tamanhoAtual > 38) tamanhoAtual = 38;
 
   document.documentElement.style.setProperty('--tamanho-fonte', tamanhoAtual + 'px');
 }
 
-// 2. FUNÇÃO DE LEITURA EM VOZ ALTA
+// SÍNTESE DE VOZ DA WEB
 function lerTexto(texto) {
   if ('speechSynthesis' in window) {
-    // Cancela leituras anteriores antes de iniciar uma nova
+    // Parar qualquer leitura anterior
     window.speechSynthesis.cancel();
 
-    const mensagem = new SpeechSynthesisUtterance(texto);
-    mensagem.lang = 'pt-BR';
-    mensagem.rate = 0.85; // Velocidade reduzida para maior clareza
-    mensagem.pitch = 1;
+    const fala = new SpeechSynthesisUtterance(texto);
+    fala.lang = 'pt-BR';
+    fala.rate = 0.8; // Velocidade ajustada para 80% para fala mais clara
+    fala.pitch = 1;  // Tom de voz padrão
 
-    window.speechSynthesis.speak(mensagem);
+    window.speechSynthesis.speak(fala);
   } else {
-    alert("Desculpe, seu navegador não suporta a leitura em voz alta.");
+    alert("Seu navegador não tem suporte para leitura por voz.");
   }
 }
 
-// 3. PARAR LEITURA
 function pararVoz() {
   if ('speechSynthesis' in window) {
     window.speechSynthesis.cancel();
   }
 }
 
-// 4. EVENTOS DOS BOTÕES (Escutadores)
+// CONFIGURAÇÃO DOS EVENTOS QUANDO A PÁGINA CARREGAR
 document.addEventListener('DOMContentLoaded', () => {
-  // Botões de fonte
+  // Eventos de fonte
   document.getElementById('btn-aumentar').addEventListener('click', () => alterarFonte(2));
   document.getElementById('btn-diminuir').addEventListener('click', () => alterarFonte(-2));
-  
-  // Botão de parar voz
+
+  // Evento de interromper leitura
   document.getElementById('btn-parar-voz').addEventListener('click', pararVoz);
 
-  // Botões para ler cada dica
+  // Eventos para leitura individual das dicas
   const botoesOuvir = document.querySelectorAll('.btn-ouvir');
   botoesOuvir.forEach(botao => {
     botao.addEventListener('click', () => {

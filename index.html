@@ -3,59 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guia de Segurança Digital - Terceira Idade</title>
+  <title>Portal de Segurança Digital para a Terceira Idade</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- BARRA SUPERIOR DE ACESSIBILIDADE -->
-  <div class="barra-acessibilidade" aria-label="Controles de Acessibilidade">
+  <!-- BARRA DE ACESSIBILIDADE FIXA -->
+  <nav class="barra-acessibilidade" aria-label="Menu de Acessibilidade">
     <div class="grupo-controle">
-      <span>Tamanho do Texto:</span>
+      <span class="label-controle">Tamanho do Texto:</span>
       <button id="btn-aumentar" aria-label="Aumentar tamanho do texto">A +</button>
       <button id="btn-diminuir" aria-label="Diminuir tamanho do texto">A -</button>
     </div>
 
     <div class="grupo-controle">
-      <button id="btn-parar-voz" class="btn-parar" aria-label="Parar leitura em voz alta">⏹️ Parar Voz</button>
+      <button id="btn-parar-voz" class="btn-parar" aria-label="Parar leitura de voz">⏹️ Parar Voz</button>
     </div>
-  </div>
+  </nav>
 
-  <header>
-    <h1>Segurança na Internet</h1>
-    <p>Dicas simples para navegar com tranquilidade e proteção.</p>
+  <header class="cabecalho-principal">
+    <h1>Guia de Proteção na Internet</h1>
+    <p>Aprenda a identificar golpes digitais e navegue no celular ou computador com total segurança.</p>
   </header>
 
-  <main class="container-dicas">
+  <main class="container-principal">
 
-    <!-- DICA 1 -->
+    <!-- DICA 1: MENSAGENS E LINKS -->
     <article class="card-dica">
-      <h2>1. Cuidado com Links Estranhos</h2>
-      <p>Nunca clique em links recebidos por mensagem de texto ou WhatsApp de pessoas desconhecidas, principalmente se prometerem prêmios ou pedirem dados bancários.</p>
+      <header class="card-cabecalho">
+        <h2>1. Mensagens Suspeitas e Links Falsos</h2>
+      </header>
 
-      <button class="btn-ouvir" data-texto="Cuidado com Links Estranhos. Nunca clique em links recebidos por mensagem de texto ou WhatsApp de pessoas desconhecidas, principalmente se prometerem prêmios ou pedirem dados bancários.">
-        🔊 Ouvir esta dica
-      </button>
+      <div class="card-conteudo">
+        <p>Golpistas costumam enviar mensagens pelo WhatsApp, SMS ou e-mail dizendo que você ganhou um prêmio, que sua conta no banco será bloqueada ou que há uma encomenda retida.</p>
+        
+        <p>Eles colocam um endereço de site (link) para você clicar. Ao clicar, o site falso pode roubar seus dados ou instalar programas maliciosos no seu aparelho.</p>
+
+        <!-- ALERTA DE DESTAQUE -->
+        <div class="caixa-alerta" role="alert">
+          <span class="icone-alerta">⚠️</span>
+          <div>
+            <strong>REGRA DE OURO:</strong>
+            <p>Nunca clique em links enviados por números desconhecidos ou por mensagens não solicitadas. Empresas e bancos sérios não mandam links para atualização de cadastro por SMS.</p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="card-rodape">
+        <button class="btn-ouvir" data-texto="Dica 1: Mensagens Suspeitas e Links Falsos. Golpistas enviam mensagens pelo WhatsApp, SMS ou e-mail dizendo que você ganhou um prêmio ou tem um problema na conta bancária. Nunca clique em links enviados por desconhecidos. Regra de ouro: Bancos e empresas sérias não enviam links para atualizar dados por mensagem.">
+          🔊 Ouvir esta dica
+        </button>
+      </footer>
     </article>
 
-    <!-- DICA 2 -->
+    <!-- DICA 2: GOLPE DO FALSO PARENTE -->
     <article class="card-dica">
-      <h2>2. Não Compartilhe Senhas</h2>
-      <p>Bancos e órgãos públicos nunca pedem sua senha por telefone, WhatsApp ou e-mail. Mantenha suas senhas anotadas em um local seguro na sua casa e não passe para ninguém.</p>
+      <header class="card-cabecalho">
+        <h2>2. O Golpe do Falso Parente no WhatsApp</h2>
+      </header>
 
-      <button class="btn-ouvir" data-texto="Não Compartilhe Senhas. Bancos e órgãos públicos nunca pedem sua senha por telefone, WhatsApp ou e-mail. Mantenha suas senhas anotadas em um local seguro na sua casa e não passe para ninguém.">
-        🔊 Ouvir esta dica
-      </button>
+      <div class="card-conteudo">
+        <p>Um criminoso envia uma mensagem de um número novo usando a foto do seu filho, neto ou parente. Ele diz que mudou de número e que precisa urgente de dinheiro para pagar uma conta ou emergência.</p>
+        
+        <p>Por estarem assustados, muitos idosos fazem a transferência (PIX) imediatamente antes de confirmar se o pedido é real.</p>
+
+        <!-- ALERTA DE DESTAQUE -->
+        <div class="caixa-alerta" role="alert">
+          <span class="icone-alerta">⚠️</span>
+          <div>
+            <strong>REGRA DE OURO:</strong>
+            <p>Se um parente pedir dinheiro por um número novo no WhatsApp, DESLIGUE O APLICATIVO e ligue para o número antigo dele ou para outro familiar para confirmar antes de enviar qualquer valor.</p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="card-rodape">
+        <button class="btn-ouvir" data-texto="Dica 2: O Golpe do Falso Parente no WhatsApp. Um criminoso manda mensagem usando a foto do seu filho ou neto dizendo que mudou de número e pede dinheiro urgente. Regra de ouro: Antes de enviar qualquer dinheiro, ligue para o número antigo do seu familiar para confirmar.">
+          🔊 Ouvir esta dica
+        </button>
+      </footer>
     </article>
 
-    <!-- DICA 3 -->
+    <!-- DICA 3: SENHAS E DADOS BANCÁRIOS -->
     <article class="card-dica">
-      <h2>3. Verifique as Ligações do Banco</h2>
-      <p>Se receber uma ligação dizendo que sua conta foi invadida, desligue imediatamente. Ligue para o número oficial do seu banco impresso no verso do seu cartão.</p>
+      <header class="card-cabecalho">
+        <h2>3. Proteção de Senhas e Dados Pessoais</h2>
+      </header>
 
-      <button class="btn-ouvir" data-texto="Verifique as Ligações do Banco. Se receber uma ligação dizendo que sua conta foi invadida, desligue imediatamente. Ligue para o número oficial do seu banco impresso no verso do seu cartão.">
-        🔊 Ouvir esta dica
-      </button>
+      <div class="card-conteudo">
+        <p>Suas senhas bancárias e o código de validação que chega no seu celular são a chave de acesso ao seu dinheiro. Pessoas mal-intencionadas podem ligar fingindo ser funcionários do banco para pedir essas informações.</p>
+
+        <p>Eles inventam que sua conta foi invadida e que precisam do código para cancelar uma compra falsa.</p>
+
+        <!-- ALERTA DE DESTAQUE -->
+        <div class="caixa-alerta" role="alert">
+          <span class="icone-alerta">⚠️</span>
+          <div>
+            <strong>REGRA DE OURO:</strong>
+            <p>NENHUM banco liga pedindo senha, código de confirmação do WhatsApp ou pedido para realizar transferências de teste. Se receber essa ligação, desligue imediatamente.</p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="card-rodape">
+        <button class="btn-ouvir" data-texto="Dica 3: Proteção de Senhas e Dados Pessoais. Golpistas ligam fingindo ser do banco e pedem senhas ou códigos enviados ao seu celular. Regra de ouro: Nenhum banco pede senha ou transferência por telefone. Se ligarem, desligue o telefone na hora.">
+          🔊 Ouvir esta dica
+        </button>
+      </footer>
     </article>
 
   </main>

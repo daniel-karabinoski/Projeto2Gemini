@@ -1,12 +1,17 @@
-/* VARIÁVEIS DE ESTILO PARA ACESSIBILIDADE */
+/* VARIÁVEIS GLOBAIS DE DESIGN E ACESSIBILIDADE */
 :root {
-  --tamanho-fonte: 20px; /* Tamanho base grande */
-  --cor-fundo: #F4F6F9;
-  --cor-texto: #1A1A1A;
-  --cor-primaria: #0056B3;
-  --cor-botao-texto: #FFFFFF;
+  --tamanho-fonte: 20px;
+  --cor-fundo: #F0F4F8;
+  --cor-texto: #111111;
+  --cor-primaria: #004085;
+  --cor-primaria-hover: #002752;
+  --cor-alerta-fundo: #FFF3CD;
+  --cor-alerta-borda: #856404;
+  --cor-alerta-texto: #533F03;
+  --cor-destaque-pare: #CC0000;
+  --cor-destaque-pare-hover: #990000;
   --cor-card-fundo: #FFFFFF;
-  --cor-destaque: #D9381E;
+  --cor-borda-card: #BEE5EB;
 }
 
 * {
@@ -18,24 +23,28 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: var(--tamanho-fonte);
-  line-height: 1.6;
+  line-height: 1.7;
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
-  padding: 20px;
+  padding-top: 100px; /* Espaço para a barra fixa superior */
+  padding-bottom: 40px;
 }
 
-/* BARRA DE FERRAMENTAS DE ACESSIBILIDADE */
+/* BARRA DE ACESSIBILIDADE FIXA NO TOPO */
 .barra-acessibilidade {
-  background-color: #E9ECEF;
-  border: 2px solid #CED4DA;
-  border-radius: 12px;
-  padding: 15px;
-  margin-bottom: 25px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #E2E6EA;
+  border-bottom: 4px solid #CED4DA;
+  padding: 12px 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  z-index: 1000;
 }
 
 .grupo-controle {
@@ -44,70 +53,134 @@ body {
   gap: 10px;
 }
 
-/* BOTÕES GRANDES E FÁCEIS DE CLICAR */
+.label-controle {
+  font-weight: bold;
+}
+
+/* ESTILIZAÇÃO DOS BOTÕES COM FOCO EM ACESSIBILIDADE */
 button {
   background-color: var(--cor-primaria);
-  color: var(--cor-botao-texto);
-  border: none;
-  padding: 12px 20px;
+  color: #FFFFFF;
+  border: 2px solid transparent;
+  padding: 12px 24px;
   font-size: 1rem;
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
-  min-height: 48px; /* Altura mínima recomendada para toque */
+  min-height: 52px; /* Garante área de toque grande */
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
 }
 
-button:hover, 
-button:focus {
-  background-color: #003D80;
-  outline: 3px solid #FFC107;
+button:hover {
+  background-color: var(--cor-primaria-hover);
 }
 
+button:focus {
+  outline: 4px solid #FFD700;
+}
+
+/* BOTÃO DE PARAR VOZ (EM DESTAQUE VERMELHO) */
 .btn-parar {
-  background-color: var(--cor-destaque);
+  background-color: var(--cor-destaque-pare);
 }
 
 .btn-parar:hover {
-  background-color: #A82512;
+  background-color: var(--cor-destaque-pare-hover);
 }
 
-header {
+/* CABEÇALHO DA PÁGINA */
+.cabecalho-principal {
   text-align: center;
-  margin-bottom: 30px;
+  max-width: 900px;
+  margin: 20px auto 30px auto;
+  padding: 0 20px;
 }
 
-header h1 {
-  font-size: 2rem;
+.cabecalho-principal h1 {
+  font-size: 2.2rem;
   color: var(--cor-primaria);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-/* CARDS DE DICAS */
-.container-dicas {
+/* CONTAINER DOS CARDS */
+.container-principal {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  max-width: 800px;
-  margin: 0 auto;
+  gap: 30px;
 }
 
+/* CARDS EXPLICATIVOS */
 .card-dica {
   background-color: var(--cor-card-fundo);
-  border: 2px solid #CCCCCC;
-  border-radius: 12px;
+  border: 3px solid #D6D8DB;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-cabecalho {
+  background-color: #E9ECEF;
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid #D6D8DB;
 }
 
-.card-dica h2 {
-  font-size: 1.4rem;
+.card-cabecalho h2 {
+  font-size: 1.5rem;
   color: var(--cor-primaria);
-  margin-bottom: 10px;
 }
 
-.card-dica p {
-  margin-bottom: 15px;
+.card-conteudo {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* CAIXA DE ALERTA PARA INFORMAÇÕES IMPORTANTES */
+.caixa-alerta {
+  background-color: var(--cor-alerta-fundo);
+  border: 3px solid var(--cor-alerta-borda);
+  color: var(--cor-alerta-texto);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.icone-alerta {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.caixa-alerta strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: #000000;
+  text-decoration: underline;
+}
+
+.card-rodape {
+  padding: 20px 24px;
+  background-color: #F8F9FA;
+  border-top: 1px solid #E9ECEF;
+}
+
+/* RESPONSIVIDADE PARA TELAS MENORES */
+@media (max-width: 600px) {
+  body {
+    padding-top: 150px;
+  }
+
+  .barra-acessibilidade {
+    justify-content: center;
+  }
 }
